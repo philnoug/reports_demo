@@ -1,0 +1,24 @@
+<%= simple_form_for(@report) do |f| %>
+  <% if @report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+      <% @report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.association :user, :label_method => lambda { |user| "#{user.name}" }, :label => "Utilisateur" %>
+    <%= f.input :client %>
+    <%= f.input :chantier, :label => "Site" %>
+    <%= f.input :isNight , :label => "Nuit?" %>
+    <%= f.input :temperature, :label => "Température"  %>
+    <%= f.input :sky_state, :label => "Temps" %>
+
+  <div class="actions">
+    <%= f.button :submit, :value => "Enregistrer" %>
+  </div>
+<% end %>

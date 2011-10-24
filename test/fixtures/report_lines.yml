@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  report_id: 1
+  pk: MyString
+  voie: 1
+  file: MyString
+  conso: MyString
+
+two:
+  report_id: 1
+  pk: MyString
+  voie: 1
+  file: MyString
+  conso: MyString

@@ -1,0 +1,29 @@
+<table>
+  <tr>
+    <th>Utilisateur</th>
+    <th>Client</th>
+    <th>Site</th>
+    <th>Nuit?</th>
+    <th>Température</th>
+    <th>Temps</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reports.each do |report| %>
+  <tr>
+    <td><%= User.find(report.user_id).name %></td>
+    <td><%= report.client %></td>
+    <td><%= report.chantier %></td>
+    <td><%= "Oui" if report.isNight %></td>
+    <td><%= report.temperature %></td>
+    <td><%= report.sky_state %></td>
+    <td><%= link_to 'Voir', report %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nouveau Rapport', new_report_path %>

@@ -1,0 +1,27 @@
+<%= simple_form_for(@report_line) do |f| %>
+  <% if @report_line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report_line.errors.count, "error") %> prohibited this report_line from being saved:</h2>
+
+      <ul>
+      <% @report_line.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :report_id %>
+    <%= f.input :pk %>
+    <%= f.input :lat %>
+    <%= f.input :lon %>
+    <%= f.input :voie %>
+    <%= f.input :file, :collection => ["G","D"], :as => :radio %>
+    <%= f.input :conso %>
+    <%= f.input :product_name %>
+    <%= f.input :product_price %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Nom</th>
+    <th>Prix</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.code %></td>
+    <td><%= product.name %></td>
+    <td><%= product.price %></td>
+    <td><%= link_to 'Modifier', edit_product_path(product) %></td>
+    <td><%= link_to 'Supprimer', product, :confirm => 'Confirmez-vous la suppression ?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nouveau Produit', new_product_path %>

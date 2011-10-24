@@ -1,0 +1,31 @@
+<h1>Listing report_lines</h1>
+
+<table>
+  <tr>
+    <th>Report</th>
+    <th>Pk</th>
+    <th>Voie</th>
+    <th>File</th>
+    <th>Conso</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @report_lines.each do |report_line| %>
+  <tr>
+    <td><%= report_line.report_id %></td>
+    <td><%= report_line.pk %></td>
+    <td><%= report_line.voie %></td>
+    <td><%= report_line.file %></td>
+    <td><%= report_line.conso %></td>
+    <td><%= link_to 'Show', report_line %></td>
+    <td><%= link_to 'Edit', edit_report_line_path(report_line) %></td>
+    <td><%= link_to 'Destroy', report_line, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Report line', new_report_line_path %>

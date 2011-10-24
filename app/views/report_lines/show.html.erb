@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Report:</b>
+  <%= @report_line.report_id %>
+</p>
+
+<p>
+  <b>Pk:</b>
+  <%= @report_line.pk %>
+</p>
+
+<p>
+  <b>Voie:</b>
+  <%= @report_line.voie %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @report_line.file %>
+</p>
+
+<p>
+  <b>Conso:</b>
+  <%= @report_line.conso %>
+</p>
+
+
+<%= link_to 'Edit', edit_report_line_path(@report_line) %> |
+<%= link_to 'Back', report_lines_path %>

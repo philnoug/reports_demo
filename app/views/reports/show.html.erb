@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+<div class="span-12">
+	<p>
+	  <b>Utilisateur:</b>
+	  <%= User.find(@report.user_id).name %>
+	</p>
+
+	<p>
+	  <b>Client:</b>
+	  <%= @report.client %>
+	</p>
+
+	<p>
+	  <b>Site:</b>
+	  <%= @report.chantier %>
+	</p>
+	<p>
+	  <b>Envoyé ? : </b>
+	  <%= "OUI" if @report.submitted %>
+	</p>
+</div>
+
+<div class="span-12 last">
+	<p>
+	  <b>Nuit ?:</b>
+	  <%= 'Oui' if @report.isNight %>
+	</p>
+
+	<p>
+	  <b>Température:</b>
+	  <%= @report.temperature %>
+	</p>
+
+	<p>
+	  <b>Temps:</b>
+	  <%= @report.sky_state %>
+	</p>
+
+	<p>
+	  <b>Modifié_le:</b>
+	  <%= @report.updated_at %>
+	</p>
+</div>
+
+<%= link_to 'Modifier', edit_report_path(@report) %> 
+<br>
+<hr>
+<br>
+
+<h3>Détails</h3>
+<table>
+<th>PK</th>
+<th>Latitude</th>
+<th>Longitude</th>
+<th>Voie</th>
+<th>File</th>
+<th>Consommation</th>
+<th>Produit</th>
+<th>Prix</th>
+<th>Modifié_le</th>
+
+<% for l in @report.report_lines %>
+	<tr>
+		<td><%= l.pk %></td>
+		<td><%= l.lat %></td>
+		<td><%= l.lon %></td>
+		<td><%= l.voie %></td>
+		<td><%= l.file %></td>
+		<td><%= l.conso %></td>
+		<td><%= l.product_name %></td>
+		<td><%= l.product_price %></td>
+		<td><%= l.updated_at %></td> 
+	</tr>
+<% end %>
+</table>
+
